@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Make Profile </title>
+</head>
+<body>
+	<center>
+		<h1>Dataflair Django file uploading</h1>
+		<hr>
+		<form method="POST" enctype="multipart/form-data">
+			{%csrf_token%}
+			<table>
+				{{form.as_table}}
+			</table>
+			<input type="submit" name="register">
+		</form>
+			
+
+	</center>
+
+</body>
+</html>
