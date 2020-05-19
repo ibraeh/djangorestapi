@@ -3,3 +3,4 @@ from .models import Person, Runner, User_Profile
 
 admin.site.register([Person, Runner, User_Profile])
 
+admin.site.site_header='Dataflair Django Site'
