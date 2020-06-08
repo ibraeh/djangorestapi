@@ -17,6 +17,9 @@ from django.contrib import admin
 from django.urls import path, include
 from my_models import views #importing function view
 from my_models.views import PublisherListView, cookie_session, cookie_delete, access_session
+from django.conf.urls import include
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,4 +30,9 @@ urlpatterns = [
     path('createsession/', views.create_session, name='create'),
     path('accesssession/',access_session),
 	path('upload/',include('my_models.urls')),
+	path('api/', include('my_models.api.urls', 'models_api')),
+	path('api2/',include('my_models.api2.urls', 'author_function_based')),
+	path('api3/', include('my_models.api3.urls', 'author_class_based')),
+	path('api4/', include('my_models.api4.urls', 'author_hyperlinked_based')),
+	path('api-auth/',include('rest_framework.urls')),
 ]

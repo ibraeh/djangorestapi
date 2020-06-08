@@ -42,7 +42,7 @@ class Author(models.Model):
 	salutation=models.CharField(max_length=5)
 	name=models.CharField(max_length=50)
 	email=models.EmailField(max_length=100)
-	headshot=models.FileField()
+	headshot=models.FileField(help_text='Please upload photo. (jpg, jpeg, png)')
 
 	def __str__(self):
 		return self.name
@@ -54,6 +54,9 @@ class Book(models.Model):
 	publisher=models.ForeignKey(Publisher, on_delete=models.CASCADE)
 	publication_date=models.DateField()
 
+	def __str__(self):
+		return self.title
+		
 
 class User_Profile(models.Model):
 	fname=models.CharField(max_length=200)
