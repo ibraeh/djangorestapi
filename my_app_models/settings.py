@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '$97sppo!%tdkbv%2n828ej=khsyq2l
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['djanapi.herokuapp.com', 'localhost', '127.0.0.1']
 
@@ -80,9 +80,17 @@ WSGI_APPLICATION = 'my_app_models.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'NAME': os.path.join(BASE_DIR, 'db.sql'),
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'NAME': os.path.join(BASE_DIR, 'db.sql'),
+
+        'ENGINE':'django.db.backends.postgresql_psycopg2',
+        'NAME':'restapi',
+        'USER':'dbuser',
+        'PASSWORD':'Bigibrahim1!',
+        'HOST':'localhost',
+        'PORT': '',
+
     }
 }
 
