@@ -23,6 +23,7 @@ from django.conf.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.index),
     path('display/',views.display, name='display'),
     path('publisher/',PublisherListView.as_view()),
     path('testcookie/', cookie_session),

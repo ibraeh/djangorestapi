@@ -4,6 +4,11 @@ from django.views.generic import ListView
 from my_models.models import Publisher,User_Profile
 from .forms import Profile_Form
 
+
+def index(request):
+	return render(request,'my_models/index.html')
+
+
 def display(request):
 	x=[]
 	for i in range(10):
